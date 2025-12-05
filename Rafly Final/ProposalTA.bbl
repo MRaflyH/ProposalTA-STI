@@ -1,0 +1,343 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{cms/global//global/global/global}
+    \entry{karta2020}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=22b1027bc9445f2f6daa6297a6d531eb}{%
+           family={Achmad\bibnamedelimb Imam\bibnamedelimb Agung\bibnamedelimb dan\bibnamedelimb Mahendra\bibnamedelima Widyartono},
+           familyi={A\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim W\bibinitperiod},
+           given={Arif\bibnamedelima Karta},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0,
+           prefix={dan},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+      }
+      \strng{namehash}{22b1027bc9445f2f6daa6297a6d531eb}
+      \strng{fullhash}{22b1027bc9445f2f6daa6297a6d531eb}
+      \strng{fullhashraw}{22b1027bc9445f2f6daa6297a6d531eb}
+      \strng{bibnamehash}{22b1027bc9445f2f6daa6297a6d531eb}
+      \strng{authorbibnamehash}{22b1027bc9445f2f6daa6297a6d531eb}
+      \strng{authornamehash}{22b1027bc9445f2f6daa6297a6d531eb}
+      \strng{authorfullhash}{22b1027bc9445f2f6daa6297a6d531eb}
+      \strng{authorfullhashraw}{22b1027bc9445f2f6daa6297a6d531eb}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{Jurnal Teknik Elektro}
+      \field{number}{3}
+      \field{title}{Analisis Kebutuhan Sistem Proteksi Sambaran Petir Pada Gedung Bertingkat}
+      \field{volume}{9}
+      \field{year}{2020}
+    \endentry
+    \entry{denov2022}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=dd71341382d6a69b5cd12940c15ca380}{%
+           family={Denov},
+           familyi={D\bibinitperiod},
+           given={Bryan},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=604af27f510bc056a2a2a7845d0cf2e2}{%
+           family={Hidayat},
+           familyi={H\bibinitperiod},
+           given={Syarif},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3cf55e75aa824bcd5a7529aae83c750}{%
+           family={Zoro},
+           familyi={Z\bibinitperiod},
+           given={Reynaldo},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d8507a3caf693128d027c971b6756882}{%
+           family={Suwarno},
+           familyi={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{14f8f7cb3b48cca41f71d540f1dccd4c}
+      \strng{fullhash}{70aa8cadf8dc680a3c5529f5a83b0414}
+      \strng{fullhashraw}{70aa8cadf8dc680a3c5529f5a83b0414}
+      \strng{bibnamehash}{70aa8cadf8dc680a3c5529f5a83b0414}
+      \strng{authorbibnamehash}{70aa8cadf8dc680a3c5529f5a83b0414}
+      \strng{authornamehash}{14f8f7cb3b48cca41f71d540f1dccd4c}
+      \strng{authorfullhash}{70aa8cadf8dc680a3c5529f5a83b0414}
+      \strng{authorfullhashraw}{70aa8cadf8dc680a3c5529f5a83b0414}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 36th International Conference On Lightning Protection (ICLP)}
+      \field{title}{Tropical Lightning Peak Current Measurement at West Java, Indonesia}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.1109/ICLP56858.2022.9942478
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/365444699
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/365444699
+      \endverb
+    \endentry
+    \entry{nicora2024}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=2d86a0d2eb3cd83c48c6c7558ca783fe}{%
+           family={Nicora},
+           familyi={N\bibinitperiod},
+           given={Martino},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c4105bf14f4a5fedf9531de366fffee9}{%
+           family={Tucci},
+           familyi={T\bibinitperiod},
+           given={Mauro},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=85751f67508dd347603ac01ad6a38a43}{%
+           family={Barmada},
+           familyi={B\bibinitperiod},
+           given={Sami},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1dae2c9820656a6f334e3219f547fe54}{%
+           family={Brignone},
+           familyi={B\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=357cacd5440957abe2945a4213e2fe1c}{%
+           family={Procopio},
+           familyi={P\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{faca6c54dcc427be9e1cf9d099c72415}
+      \strng{fullhash}{0d66dc0d58792d4df1a93831138fa64b}
+      \strng{fullhashraw}{0d66dc0d58792d4df1a93831138fa64b}
+      \strng{bibnamehash}{0d66dc0d58792d4df1a93831138fa64b}
+      \strng{authorbibnamehash}{0d66dc0d58792d4df1a93831138fa64b}
+      \strng{authornamehash}{faca6c54dcc427be9e1cf9d099c72415}
+      \strng{authorfullhash}{0d66dc0d58792d4df1a93831138fa64b}
+      \strng{authorfullhashraw}{0d66dc0d58792d4df1a93831138fa64b}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{IEEE Transactions on Electromagnetic Compatibility}
+      \field{month}{6}
+      \field{number}{66}
+      \field{title}{Lightning Location and Peak Current Estimation From Lightning-Induced Voltages on Transmission Lines With a Machine Learning Approach}
+      \field{volume}{3}
+      \field{year}{2024}
+    \endentry
+    \entry{rith2025}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=6c415daa9eb9c14f2f3710e92b84e9b5}{%
+           family={Rith},
+           familyi={R\bibinitperiod},
+           given={Vicheka},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2059ef85cd921bae8170ece749af01e6}{%
+           family={Vann},
+           familyi={V\bibinitperiod},
+           given={Dara},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7d8a57fad01c681de6134f0135f6336c}{%
+           family={Santos},
+           familyi={S\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8914c94a9f53301e51e1aae1b6fec773}
+      \strng{fullhash}{8914c94a9f53301e51e1aae1b6fec773}
+      \strng{fullhashraw}{8914c94a9f53301e51e1aae1b6fec773}
+      \strng{bibnamehash}{8914c94a9f53301e51e1aae1b6fec773}
+      \strng{authorbibnamehash}{8914c94a9f53301e51e1aae1b6fec773}
+      \strng{authornamehash}{8914c94a9f53301e51e1aae1b6fec773}
+      \strng{authorfullhash}{8914c94a9f53301e51e1aae1b6fec773}
+      \strng{authorfullhashraw}{8914c94a9f53301e51e1aae1b6fec773}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{Journal of Tecnologia Quantica}
+      \field{month}{6}
+      \field{number}{3}
+      \field{title}{Quantum Computing to Forecast Extreme Weather}
+      \field{volume}{2}
+      \field{year}{2025}
+      \field{pages}{125\bibrangedash 134}
+      \range{pages}{10}
+    \endentry
+    \entry{silva2025}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=5720df021fc5c6d865b3fea5e05de0f1}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Maria\bibnamedelimb Helóisa\bibnamedelima F.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0,
+           prefix={da},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=be88eb61e96e8a53aee2fe9dcfc5e9f6}{%
+           family={Jesus},
+           familyi={J\bibinitperiod},
+           given={Gleydson\bibnamedelima F.},
+           giveni={G\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=fb8c19fd20629be990ff374defee44a3}{%
+           family={Nascimento},
+           familyi={N\bibinitperiod},
+           given={Christiano\bibnamedelimb M.\bibnamedelimi S.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=08184d54c39642f3d1f9f0f9469a78a9}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Valéria\bibnamedelima L.},
+           giveni={V\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0,
+           prefix={da},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=cec0f35f3c22804b9b47600d9342016c}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={Clebson\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c0953e2f4f40dfb70ff5cc76c479d99f}
+      \strng{fullhash}{4d83fd19c5f9cf056c7e58db11e473ea}
+      \strng{fullhashraw}{4d83fd19c5f9cf056c7e58db11e473ea}
+      \strng{bibnamehash}{4d83fd19c5f9cf056c7e58db11e473ea}
+      \strng{authorbibnamehash}{4d83fd19c5f9cf056c7e58db11e473ea}
+      \strng{authornamehash}{c0953e2f4f40dfb70ff5cc76c479d99f}
+      \strng{authorfullhash}{4d83fd19c5f9cf056c7e58db11e473ea}
+      \strng{authorfullhashraw}{4d83fd19c5f9cf056c7e58db11e473ea}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{title}{Exploring Quantum Machine Learning for Weather Forecasting}
+      \field{year}{2025}
+    \endentry
+    \entry{ams2022}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e7eb0bf0cc5ab64adbbe1e3605ea793a}{%
+           family={Society},
+           familyi={S\bibinitperiod},
+           given={American\bibnamedelima Meteorology},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e7eb0bf0cc5ab64adbbe1e3605ea793a}
+      \strng{fullhash}{e7eb0bf0cc5ab64adbbe1e3605ea793a}
+      \strng{fullhashraw}{e7eb0bf0cc5ab64adbbe1e3605ea793a}
+      \strng{bibnamehash}{e7eb0bf0cc5ab64adbbe1e3605ea793a}
+      \strng{authorbibnamehash}{e7eb0bf0cc5ab64adbbe1e3605ea793a}
+      \strng{authornamehash}{e7eb0bf0cc5ab64adbbe1e3605ea793a}
+      \strng{authorfullhash}{e7eb0bf0cc5ab64adbbe1e3605ea793a}
+      \strng{authorfullhashraw}{e7eb0bf0cc5ab64adbbe1e3605ea793a}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://glossary.ametsoc.org/wiki/Lightning}}
+      \field{title}{Lightning}
+      \field{year}{2022}
+    \endentry
+    \entry{wang2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=bbe869383a7d3458b82c516a21e4482c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d1c0400c6090796911ab04cfa33982b}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c84333257e5fef7e25ef4f7a4111077c}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8bee622d1b143f26fb1aa74b61da290a}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{acd9e82ae33177dd4a8978b3c1ffba56}
+      \strng{fullhash}{cdd936a16c0359c6bcc7a2ea044c1ef2}
+      \strng{fullhashraw}{cdd936a16c0359c6bcc7a2ea044c1ef2}
+      \strng{bibnamehash}{cdd936a16c0359c6bcc7a2ea044c1ef2}
+      \strng{authorbibnamehash}{cdd936a16c0359c6bcc7a2ea044c1ef2}
+      \strng{authornamehash}{acd9e82ae33177dd4a8978b3c1ffba56}
+      \strng{authorfullhash}{cdd936a16c0359c6bcc7a2ea044c1ef2}
+      \strng{authorfullhashraw}{cdd936a16c0359c6bcc7a2ea044c1ef2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{Atmosphere}
+      \field{month}{11}
+      \field{number}{1698}
+      \field{title}{A Survey of Deep Learning-Based Lightning Prediction}
+      \field{volume}{14}
+      \field{year}{2023}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

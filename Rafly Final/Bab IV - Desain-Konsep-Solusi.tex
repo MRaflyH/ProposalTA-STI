@@ -1,0 +1,63 @@
+% ==========================================
+% BAB IV DESAIN KONSEP SOLUSI
+% ==========================================
+\chapter{DESAIN KONSEP SOLUSI}
+\label{chap:desain-konsep-solusi}
+Arsitektur umum solusi usulan (gambaran end-to-end)
+
+Input: kumpulan data petir dan meteorologi dari PLN (wilayah tropis) dan NASA/LIS-OTD (global/subtropis) yang telah dipilih sesuai ruang lingkup penelitian.
+Modul preprocessing: pembersihan data, rekonsiliasi format, agregasi spasial-temporal, perhitungan GFD, dan konstruksi fitur meteorologis.
+Modul pemodelan klasik: implementasi baseline (mis. RF/SVR/MLP) untuk memprediksi GFD dengan pipeline yang serupa.
+Modul QNN/VQC berbasis Qiskit: encoding data ke ruang kuantum (feature map), pemrosesan melalui ansatz parametrik, dan measurement via EstimatorQNN untuk menghasilkan prediksi GFD.
+Modul evaluasi: perhitungan metrik (MSE, RMSE, MAE, R²), analisis error, dan visualisasi perbandingan tropis vs subtropis serta QNN vs model klasik.
+
+Komponen utama sistem yang diusulkan
+
+Sumber data:
+
+Dataset sambaran petir lokal (mis. PLN) yang berisi lokasi dan waktu sambaran di wilayah tropis Indonesia.
+Dataset satelit NASA/LIS-OTD yang menyediakan informasi flashes dan/atau GFD di wilayah subtropis dan global.
+
+Modul pengolahan data:
+
+Sinkronisasi resolusi spasial (grid) dan temporal antara dataset; kalkulasi GFD per grid.
+Normalisasi dan scaling fitur sehingga sesuai untuk encoding kuantum (mis. rentang sudut rotasi).
+
+Modul Qiskit (inti kuantum):
+
+Feature map (mis. angle encoding atau ZZFeatureMap) untuk memetakan fitur meteorologis ke state qubit.
+Ansatz parametrik (mis. TwoLocal/Ry) yang membentuk VQC dengan kedalaman terkendali.
+Estimator primitive untuk menghitung expectation value sebagai output regresi GFD.
+
+Modul evaluasi dan analisis:
+
+Fungsi evaluasi terstandardisasi untuk semua model (klasik dan QNN).
+Fasilitas untuk membandingkan performa di domain tropis dan subtropis serta skenario cross-domain.
+
+Sistem saat ini (before) – karakteristik umum
+
+Peta GFD dan parameter petir banyak bergantung pada model numerik, statistik klimatologis, atau ML klasik yang dikembangkan di wilayah subtropis/lintang menengah.
+Integrasi eksplisit antara data tropis Indonesia (PLN) dan data global/subtropis (NASA/LIS-OTD) dalam satu kerangka pemodelan masih terbatas.
+Belum ada pemanfaatan QNN/VQC sebagai alternatif atau pelengkap model klasik untuk tugas prediksi GFD.
+
+Sistem usulan (after) – konsep solusi QML untuk GFD
+
+Mengintegrasikan data tropis dan subtropis dalam satu pipeline analitik, dengan penandaan domain yang jelas untuk studi generalisasi.
+Menyediakan dua jalur pemodelan: jalur klasik (baseline) dan jalur QNN/VQC di Qiskit, sehingga dapat dievaluasi berdampingan pada data dan metrik yang sama.
+Menghasilkan fungsi prediktor GFD berbasis QNN yang siap diuji untuk berbagai konfigurasi (in-domain vs cross-domain, variasi fitur, variasi ansatz).
+Membuka ruang untuk pengujian di perangkat kuantum nyata melalui desain sirkuit yang dangkal dan hemat qubit.
+
+Alur data dan pemodelan (konsep block diagram)
+
+Data mentah (PLN + NASA) → modul preprocessing & integrasi → dataset fitur siap pakai (tropis, subtropis, label GFD).
+Dataset fitur → pembagian train/validation/test (dengan skenario domain-aware) →
+
+Cabang 1: training model klasik (RF/SVR/MLP) + evaluasi baseline.
+Cabang 2: encoding data ke sirkuit QNN (feature map + ansatz) → training VQC dengan optimizer klasik → evaluasi QNN.
+
+Hasil evaluasi → modul analisis (perbandingan model, analisis error, visualisasi pola tropis vs subtropis) → rekomendasi dan insight untuk standar/proteksi petir.
+
+Keterkaitan dengan metodologi (PRISMA, Concept Matrix, CRISP-DM)
+
+PRISMA + Concept Matrix digunakan di awal untuk mengidentifikasi literatur terkait GFD, ML, dan QML, sehingga desain solusi merefleksikan gap yang telah dipetakan.
+CRISP-DM memandu alur: Business Understanding (urgensi GFD tropis), Data Understanding & Preparation (integrasi PLN + NASA), Modeling (baseline klasik & QNN), Evaluation (perbandingan metrik), hingga Deployment (formulasi predictor dan dokumentasi hasil).

@@ -1,0 +1,79 @@
+% ==========================================
+% BAB I PENDAHULUAN
+% ==========================================
+\chapter{PENDAHULUAN}
+\label{chap:pendahuluan}
+Bab pendahuluan menguraikan dasar pemikiran dan kerangka kerja awal dalam penyusunan tugas akhir. Pembahasan dimulai dengan pemaparan latar belakang yang menjelaskan urgensi serta motivasi pemilihan topik, diikuti dengan rumusan masalah yang mendetailkan inti persoalan yang akan diselesaikan. Selanjutnya, dipaparkan tujuan yang menjadi target pencapaian serta batasan masalah untuk memperjelas ruang lingkup pembahasan. Bab ini diakhiri dengan penjelasan metodologi yang menjabarkan tahapan sistematis yang dilakukan guna menjawab permasalahan tersebut.
+
+% --- Latar Belakang ---
+\section{Latar Belakang}
+Petir adalah pelepasan muatan listrik transien berarus tinggi di atmosfer dengan panjang lintasan yang diukur dalam kilometer \cite{ams2022}. ... PENJELASAN GFD SECARA SINGKAT.
+
+Sambaran petir merupakan fenomena alam yang menjadi sumber risiko signifikan bagi manusia, struktur (misalnya, bangunan sipil dan turbin angin), infrastruktur (misalnya, transmisi dan distribusi tenaga listrik, serta sistem telekomunikasi), perkeretaapian, penerbangan, dan lingkungan alam \cite{nicora2024}.
+Data satelit global menunjukkan bahwa terjadi sekitar 46 sambaran petir setiap detiknya di seluruh dunia, yang mengakibatkan lebih dari 10.000 korban jiwa dan kerugian ekonomi melebihi satu miliar USD setiap tahun \cite{wang2023}.
+Sambaran petir menimbulkan dampak destruktif yang meliputi kerusakan struktur bangunan, risiko kebakaran, kegagalan peralatan, hingga ancaman fatalitas bagi manusia \cite{karta2020}.
+Berdasarkan statistik kegagalan tangki minyak, kebakaran tangki minyak yang disebabkan oleh petir terjadi hampir setiap tahun di Indonesia dalam kurun waktu 1995 hingga 2021. Kilang-kilang minyak di seluruh Indonesia terpaksa berhenti beroperasi akibat sambaran petir, yang menyebabkan banyaknya kasus kebakaran tangki serta kerusakan pada peralatan elektronik dan berbasis mikroprosesor sejak tahun 1995 \cite{denov2022}.
+
+Indonesia, sebagai negara tropis yang dikelilingi oleh lautan dan memiliki arus udara naik (\textit{updraft}) tinggi, menghadapi tantangan-tantangan unik.
+Indonesia memiliki hutan tropis yang luas sehingga tingkat kelembapannya tinggi. Selain itu, keberadaan banyak industri dan uap garam laut menyebabkan tingginya kandungan aerosol. Kondisi ini membuat wilayah Indonesia sangat kondusif bagi pembentukan awan Kumulonimbus yang menghasilkan petir. Di Indonesia, awan Kumulonimbus (CB) lebih lebar dibandingkan awan CB di wilayah subtropis. Petir di Indonesia memiliki gelombang ekor yang panjang (\textit{long tail wave}), sehingga parameter muatan arusnya lebih besar dibandingkan dengan petir subtropis. Kerapatan sambaran petir di lokasi-lokasi tersebut juga relatif lebih tinggi \cite{denov2022}.
+
+Model cuaca yang lebih akurat sangat dibutuhkan untuk memberikan peringatan dini yang lebih baik, mengurangi dampak bencana cuaca ekstrem, dan merencanakan mitigasi yang lebih efektif \cite{rith2025}.
+Prediksi cuaca yang lebih akurat dapat meningkatkan kesiapsiagaan masyarakat dan mengurangi kerugian akibat bencana alam \cite{rith2025}.
+Secara khusus, insinyur listrik membutuhkan data lokasi sambaran dan arus puncak dalam prosedur yang bertujuan untuk mengukur risiko petir bagi suatu struktur atau infrastruktur serta merancang sistem proteksi petir yang sesuai \cite{nicora2024}.
+Statistik tersebut diharapkan dapat membantu insinyur dalam merancang sistem proteksi petir yang tepat berdasarkan data petir lokal \cite{denov2022}.
+Pada akhirnya, kemampuan prediktif ini sangat krusial bagi keselamatan jiwa, perlindungan harta benda, dan pemeliharaan keselamatan infrastruktur vital \cite{wang2023}.
+
+Saat ini, terdapat berbagai model prediksi petir yang memanfaatkan pendekatan tradisional, algoritma \textit{machine learning}, serta teknik \textit{deep learning}.
+Prediksi model numerik, yang mendasari sebagian besar metode prakiraan petir tradisional, memanfaatkan prinsip-prinsip dari dinamika atmosfer, termodinamika, dan bidang terkait untuk merumuskan model yang mensimulasikan proses atmosfer. Namun, akurasi model-model ini memerlukan peningkatan dikarenakan kompleksnya proses fisik multi-skala yang terlibat dalam kejadian petir \cite{wang2023}.
+Algoritma \textit{machine learning} tradisional mencakup \textit{decision trees} (DT), \textit{support vector machines} (SVM), \textit{random forests} (RF), \textit{naive Bayes}, dan \textit{simple ANNs}. Metode-metode ini sangat bergantung pada ekstraksi fitur manual, dengan konstruksi fitur secara manual menjadi komponen penting saat menerapkan algoritma \textit{machine learning} tradisional ini dalam prediksi petir \cite{wang2023}.
+Terbukti, metode \textit{deep learning}, khususnya \textit{CNN} dan \textit{RNN}, telah menunjukkan kinerja yang luar biasa saat menangani data spasial dan temporal multi-dimensi yang kompleks. Akurasi model-model tersebut masih menjadi area yang perlu ditingkatkan. Metodologi yang sederhana ini dapat mengabaikan keterkaitan yang rumit di antara parameter pengamatan atau fisika dasar yang memicu terjadinya petir \cite{wang2023}.
+
+Perkembangan terkini di bidang-bidang yang berdekatan (\textit{adjacent fields}) telah menunjukkan keberhasilan penerapan komputasi kuantum dalam memecahkan permasalahan yang kompleks.
+Keunggulan dari model kuantum berasal dari sifat-sifat kuantum seperti \textit{superposition} dan \textit{entanglement}, yang memungkinkan kapasitas pemrosesan yang lebih besar dan identifikasi pola-pola kompleks yang mungkin tidak akan terdeteksi oleh model komputasi klasik \cite{silva2025}.
+Keberhasilan teknologi komputasi kuantum dalam bidang-bidang seperti optimasi dan pemodelan material menunjukkan bahwa teknologi ini memiliki potensi besar untuk menyelesaikan masalah yang berkaitan dengan kompleksitas dan ketidakpastian dalam sistem cuaca \cite{rith2025}.
+Dalam penelitian meteorologi, komputasi kuantum telah mulai digunakan untuk mengembangkan algoritma dan model prediksi cuaca yang lebih efektif. Penelitian juga menunjukkan bahwa komputasi kuantum dapat membantu mempercepat simulasi iklim dan cuaca yang lebih kompleks, dengan meningkatkan kecepatan analisis data atmosfer yang besar dan meningkatkan pemrosesan data yang lebih efisien \cite{rith2025}.
+Komputasi kuantum dengan studi-studi yang ada saat ini berfokus pada prediksi kecepatan angin, iradiansi matahari, pembangkitan daya angin dan fotovoltaik, badai geomagnetik, evapotranspirasi, dan presipitasi \cite{silva2025}.
+
+Petir sebagai fenomena alam kuat menyebabkan kerusakan masif dan risiko keselamatan. Hal ini menjadi isu kritis di Indonesia yang memiliki densitas petir tinggi dan tantangan geografis yang unik. Untuk memitigasi risiko ini, memprediksi parameter petir secara akurat sangatlah penting. Namun, penelitian saat ini masih bergantung pada \textit{artificial intelligence} (AI) standar. Meskipun komputasi kuantum sudah menangani parameter cuaca, terdapat kekosongan penelitian (\textit{gap}) di mana kuantum belum diterapkan secara spesifik untuk prediksi petir.
+
+% --- Rumusan Masalah ---
+\section{Rumusan Masalah}
+Berdasarkan uraian di atas mengenai tantangan prediksi cuaca ekstrem dan evolusi teknologi komputasi, maka rumusan masalah yang diajukan dalam penelitian ini adalah:
+\begin{enumerate}
+\item	Bagaimana merancang arsitektur \textit{Variational Quantum Circuit} (VQC) atau \textit{Quantum Neural Network} (QNN) pada framework Qiskit yang optimal untuk mengolah parameter input petir guna memprediksi nilai \textit{Ground Flash Density} (GFD)?
+\item	Bagaimana karakteristik dan akurasi model kuantum tersebut dalam membedakan pola GFD pada wilayah Tropis dibandingkan dengan wilayah Subtropis , serta apakah model mampu melakukan generalisasi pada kedua domain data tersebut?
+\item   Bagaimana memformulasikan pemetaan matematis (mapping) dari parameter yang telah terlatih menjadi suatu fungsi prediksi yang dapat menerima input variabel atmosfer untuk menghasilkan nilai estimasi GFD?
+\end{enumerate}
+
+% --- Tujuan ---
+\section{Tujuan}
+Berdasarkan perumusan masalah dan latar belakang, maka tujuan yang diajukan dalam penelitian ini adalah:
+\begin{enumerate}
+\item	Membangun dan mengimplementasikan model prediksi GFD berbasis algoritma kuantum menggunakan Qiskit dengan teknik data encoding yang tepat.
+\item   Mengevaluasi performa model dalam memprediksi GFD pada dataset wilayah Tropis dan Subtropis, serta menganalisis keunggulan atau kelemahan komputasi kuantum dibanding metode klasik pada dataset ini.
+\item   Menghasilkan suatu model komputasi (fungsi prediktor) yang tervalidasi, di mana parameter cuaca/petir dapat diinputkan ke dalam sirkuit kuantum yang telah dioptimasi untuk mengeluarkan nilai GFD.
+\end{enumerate}
+
+% --- Batasan Masalah ---
+\section{Batasan Masalah}
+Tuliskan batasan-batasan yang diambil dalam pelaksanaan tugas akhir. Batasan ini dapat dihindari (bersifat opsional, tidak perlu ada) jika topik atau judul tugas akhir dibuat cukup spesifik.
+\begin{enumerate}
+\item	Pembangunan solusi dengan memanfaatkan Qiskit sebagai \textit{stack} untuk komputasi kuantum dan riset algoritma yang disimulasikan pada komputer pribadi.
+\item   Data yang digunakan pada pelaksanaan tugas akhir diperoleh dari ....
+\end{enumerate}
+
+% --- Metodologi Pengerjaan TA ---
+\section{Metodologi}
+Tuliskan semua tahapan yang akan dilalui selama pelaksanaan tugas akhir. Tahapan ini spesifik untuk menyelesaikan persoalan tugas akhir. Khusus untuk penyusunan proposal ini, jelaskan secara detail:
+
+Menerapkan protokol PRISMA dan Concept Matrix (Webster & Watson) untuk studi literatur
+
+CRISP-DM untuk pengembangan model
+\begin{enumerate}
+\item	Business Understanding
+\item	Data Understanding
+\item   Data Preperation
+\item   Modeling
+\item   Evaluation
+\item   Deployment
+\end{enumerate}

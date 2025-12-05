@@ -1,0 +1,97 @@
+% ==========================================
+% BAB V RENCANA SELANJUTNYA
+% ==========================================
+\chapter{RENCANA SELANJUTNYA}
+\label{chap:rencana-selanjutnya}
+V.1 Rencana Implementasi
+
+Tahap persiapan dan pematangan studi literatur
+
+Menyelesaikan studi literatur dengan protokol PRISMA dan Concept Matrix untuk memfinalisasi daftar variabel meteorologis dan arsitektur QNN yang paling relevan dengan GFD.
+Merumuskan lebih rinci skenario eksperimen (in-domain vs cross-domain, baseline vs QNN).
+
+Pengumpulan dan integrasi data
+
+Memperoleh dataset petir dari PLN (wilayah tropis Indonesia) dan data LIS/OTD atau produk NASA lain untuk wilayah subtropis/lintang menengah sesuai ruang lingkup.
+Melakukan rekonsiliasi format, sistem koordinat, dan resolusi spasial-temporal; menghitung nilai GFD per grid/wilayah sesuai definisi penelitian.
+
+Preprocessing dan pemilihan fitur
+
+Membersihkan data dari outlier, data ganda, dan missing values, serta menyesuaikan periode waktu yang overlap antara dataset.
+Memilih dan/atau membangun fitur meteorologis (CAPE, presipitasi, suhu, kelembapan, dsb.) berdasarkan literatur dan ketersediaan data, kemudian melakukan normalisasi/standarisasi.
+
+Implementasi lingkungan pemodelan
+
+Menyiapkan lingkungan Python, Jupyter Notebook, dan pustaka yang diperlukan (Qiskit, scikit-learn, pustaka numerik) di laptop penelitian.
+Mengonfigurasi akses ke IBM Quantum (jika memungkinkan) untuk uji coba terbatas di hardware nyata, dengan tetap menjadikan simulator sebagai platform utama.
+
+Pembangunan dan pelatihan model
+
+Mengimplementasikan baseline klasik (mis. RF, SVR, MLP sederhana) pada dataset GFD terintegrasi sesuai skenario train/test yang direncanakan.
+Mendesain dan mengimplementasikan QNN/VQC di Qiskit: memilih feature map dan ansatz, mengatur jumlah qubit, kedalaman sirkuit, optimizer, dan hyperparameter lain; kemudian melakukan training dan tuning bertahap.
+
+Dokumentasi dan pengelolaan eksperimen
+
+Mencatat semua konfigurasi, seed, dan hasil eksperimen dalam log/Spreadsheet untuk memudahkan analisis akhir.
+Menyusun struktur folder dan notebook yang terorganisir (data, preprocessing, baseline, QNN, evaluasi) sebagai dasar penulisan BAB hasil dan pembahasan.
+
+V.2 Desain Pengujian dan Evaluasi
+
+Strategi pembagian data dan skenario uji
+
+Membagi data menjadi set train, validation, dan test dengan mempertimbangkan pemisahan domain (tropis vs subtropis) dan/atau jendela waktu tertentu.
+Menyusun beberapa skenario:
+Skenario in-domain (train dan test dalam domain yang sama).
+Skenario cross-domain (train tropis – test subtropis, dan sebaliknya).
+
+Metrik evaluasi dan prosedur pengukuran
+
+Menetapkan metrik utama seperti MSE, RMSE, MAE, dan R² untuk mengukur akurasi prediksi GFD.
+Menggunakan metrik yang sama untuk seluruh model (klasik dan QNN) agar perbandingan adil dan transparan.
+
+Perbandingan dengan baseline klasik
+
+Menghasilkan tabel dan grafik perbandingan kinerja baseline (RF/SVR/MLP) vs QNN pada setiap skenario (in-domain, cross-domain).
+Menganalisis kondisi di mana QNN memberikan perbaikan (atau penurunan) performa dibanding baseline, termasuk perbedaan perilaku pada GFD tinggi.
+
+Evaluasi generalisasi tropis–subtropis
+
+Mengkaji error distribusi per domain untuk melihat apakah model yang dilatih di satu domain tetap stabil ketika diuji di domain lain.
+Menginterpretasikan hasil generalisasi dalam konteks perbedaan karakteristik petir tropis vs subtropis dan implikasinya bagi desain proteksi.
+
+Analisis sensitivitas dan ablation study sederhana
+
+Mencoba variasi jumlah fitur, tipe feature map, kedalaman ansatz, dan pilihan optimizer untuk menilai sensitivitas kinerja QNN terhadap desain arsitektur.
+Mendokumentasikan konfigurasi yang paling stabil dan efisien sebagai rekomendasi desain QNN untuk GFD.
+
+V.3 Analisis Risiko dan Mitigasi
+
+Risiko kualitas dan ketersediaan data
+
+Potensi ketidaklengkapan data (gap temporal, missing lokasi, noise) dari PLN atau NASA yang dapat menurunkan kualitas model.
+Mitigasi: menerapkan prosedur cleaning dan imputasi yang ketat, menyempitkan ruang lingkup ke periode/wilayah dengan kualitas data terbaik, serta menyiapkan alternatif fokus (mis. satu domain) jika data domain lain terlalu terbatas.
+
+Risiko ketidakseimbangan dan non-stationarity GFD
+
+Nilai GFD tinggi mungkin jarang, sehingga model cenderung bias ke nilai rendah/normal dan gagal menangkap ekor distribusi.
+Mitigasi: eksplorasi transformasi target (mis. log-GFD), penimbangan error (weighted loss), atau teknik resampling sederhana; fokus analisis khusus pada subset kejadian GFD tinggi.
+
+Risiko keterbatasan komputasi dan konvergensi QNN
+
+Simulator Qiskit dapat menjadi lambat untuk kombinasi qubit dan kedalaman sirkuit tertentu; pelatihan QNN berisiko mengalami barren plateaus atau tidak konvergen.
+Mitigasi: memulai dengan arsitektur sangat dangkal dan sedikit qubit, meningkatkan kompleksitas secara bertahap; mencoba beberapa jenis ansatz dan optimizer; menyiapkan baseline klasik yang solid sebagai fallback jika QNN tidak stabil.
+
+Risiko akses dan stabilitas hardware kuantum
+
+Akses ke IBM Quantum mungkin terbatas (antrian panjang, kuota tembak), dan noise perangkat dapat menurunkan kualitas hasil.
+Mitigasi: menjadikan simulator sebagai platform utama untuk seluruh analisis kuantitatif; menggunakan hardware nyata hanya sebagai demonstrasi kualitatif berskala kecil jika memungkinkan.
+
+Risiko manajemen waktu dan lingkup skripsi
+
+Batas waktu pengerjaan skripsi dapat terancam jika eksperimen terlalu banyak atau kompleksitas model tidak dikendalikan.
+Mitigasi: menetapkan milestone sesuai fase CRISP-DM, memprioritaskan skenario eksperimen utama (mis. satu baseline + satu konfigurasi QNN inti), dan membatasi eksplorasi tambahan hanya jika waktu memungkinkan.
+
+Risiko kesulitan implementasi teknis Qiskit/QML
+
+Kurva belajar Qiskit dan QML relatif curam, sehingga ada risiko bottleneck pada fase coding dan debugging.
+Mitigasi: memanfaatkan dokumentasi resmi Qiskit, contoh kode EstimatorQNN, dan memecah implementasi menjadi modul kecil (encoding, ansatz, training) yang diuji satu per satu sebelum digabungkan.

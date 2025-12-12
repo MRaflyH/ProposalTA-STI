@@ -1,0 +1,20 @@
+\begin{table}[h]
+\centering
+\begin{tabular}{ | p{1.5cm} | p{3cm} | p{8cm} |}
+    \hline
+    \textbf{ID} & \textbf{Kebutuhan Fungsional} & \textbf{Deskripsi Detail} \\
+    \hline
+    F-01 & Prediksi GFD QNN & Menerima input fitur meteorologis dan menghasilkan output estimasi nilai GFD untuk suatu grid/wilayah. \\
+    \hline
+    F-02 & Pemodelan Pola Tropis Versus Subtropis & Mengakomodasi penandaan domain atau koordinat geografis serta mampu membedakan pola GFD pada kedua rezim iklim melalui analisis error. \\
+    \hline
+    F-03 & Eksperimen Generalisasi Lintas Domain & Memungkinkan skenario \textit{train-on-tropics, test-on-subtropics} (dan sebaliknya) serta menyediakan pipeline komparasi performa \textit{cross-domain} vs \textit{in-domain}. \\
+    \hline
+    F-04 & Evaluasi & Menyediakan fungsi evaluasi. \\
+    \hline
+    F-05 & Manajemen Eksperimen \& Konfigurasi & Menyimpan konfigurasi agar dapat direplikasi, serta fungsi simpan/panggil model terlatih. \\
+    \hline
+\end{tabular}
+\caption{Kebutuhan Fungsional Model Prediksi GFD Berbasis QNN}
+\label{tbl:tabelFungsional}
+\end{table}

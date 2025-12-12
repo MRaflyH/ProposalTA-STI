@@ -7,7 +7,7 @@ Bab pendahuluan menguraikan dasar pemikiran dan kerangka kerja awal dalam penyus
 
 % --- Latar Belakang ---
 \section{Latar Belakang}
-Petir adalah pelepasan muatan listrik transien berarus tinggi di atmosfer dengan panjang lintasan yang diukur dalam kilometer \cite{ams2022}. ... PENJELASAN GFD SECARA SINGKAT.
+Petir adalah pelepasan muatan listrik transien berarus tinggi di atmosfer dengan panjang lintasan yang diukur dalam kilometer \cite{ams2022}. Terdapat beragam pendekatan untuk mengevaluasi intensitas sambaran petir. Salah satu evaluasi intensitas dapat dilihat dari pengukuran kerapatan petir atau \textit{Ground Flash Density} (GFD). Secara umum, GFD didefinisikan sebagai laju kilat awan-ke-tanah (\textit{ground flash rate}) yang diintegrasikan terhadap waktu, dinyatakan sebagai jumlah kilat per satuan luas (biasanya per kilometer persegi) \cite{makela2011}.
 
 Sambaran petir merupakan fenomena alam yang menjadi sumber risiko signifikan bagi manusia, struktur (misalnya, bangunan sipil dan turbin angin), infrastruktur (misalnya, transmisi dan distribusi tenaga listrik, serta sistem telekomunikasi), perkeretaapian, penerbangan, dan lingkungan alam \cite{nicora2024}.
 Data satelit global menunjukkan bahwa terjadi sekitar 46 sambaran petir setiap detiknya di seluruh dunia, yang mengakibatkan lebih dari 10.000 korban jiwa dan kerugian ekonomi melebihi satu miliar USD setiap tahun \cite{wang2023}.
@@ -19,14 +19,15 @@ Indonesia memiliki hutan tropis yang luas sehingga tingkat kelembapannya tinggi.
 
 Model cuaca yang lebih akurat sangat dibutuhkan untuk memberikan peringatan dini yang lebih baik, mengurangi dampak bencana cuaca ekstrem, dan merencanakan mitigasi yang lebih efektif \cite{rith2025}.
 Prediksi cuaca yang lebih akurat dapat meningkatkan kesiapsiagaan masyarakat dan mengurangi kerugian akibat bencana alam \cite{rith2025}.
-Secara khusus, insinyur listrik membutuhkan data lokasi sambaran dan arus puncak dalam prosedur yang bertujuan untuk mengukur risiko petir bagi suatu struktur atau infrastruktur serta merancang sistem proteksi petir yang sesuai \cite{nicora2024}.
+Secara khusus, insinyur listrik membutuhkan data parameter petir dalam prosedur yang bertujuan untuk mengukur risiko petir bagi suatu struktur atau infrastruktur serta merancang sistem proteksi petir yang sesuai \cite{nicora2024}.
 Statistik tersebut diharapkan dapat membantu insinyur dalam merancang sistem proteksi petir yang tepat berdasarkan data petir lokal \cite{denov2022}.
 Pada akhirnya, kemampuan prediktif ini sangat krusial bagi keselamatan jiwa, perlindungan harta benda, dan pemeliharaan keselamatan infrastruktur vital \cite{wang2023}.
 
-Saat ini, terdapat berbagai model prediksi petir yang memanfaatkan pendekatan tradisional, algoritma \textit{machine learning}, serta teknik \textit{deep learning}.
+Saat ini, terdapat berbagai model prediksi petir yang memanfaatkan pendekatan tradisional, algoritma \textit{machine learning} (ML), serta teknik \textit{deep learning} (DL).
 Prediksi model numerik, yang mendasari sebagian besar metode prakiraan petir tradisional, memanfaatkan prinsip-prinsip dari dinamika atmosfer, termodinamika, dan bidang terkait untuk merumuskan model yang mensimulasikan proses atmosfer. Namun, akurasi model-model ini memerlukan peningkatan dikarenakan kompleksnya proses fisik multi-skala yang terlibat dalam kejadian petir \cite{wang2023}.
-Algoritma \textit{machine learning} tradisional mencakup \textit{decision trees} (DT), \textit{support vector machines} (SVM), \textit{random forests} (RF), \textit{naive Bayes}, dan \textit{simple ANNs}. Metode-metode ini sangat bergantung pada ekstraksi fitur manual, dengan konstruksi fitur secara manual menjadi komponen penting saat menerapkan algoritma \textit{machine learning} tradisional ini dalam prediksi petir \cite{wang2023}.
-Terbukti, metode \textit{deep learning}, khususnya \textit{CNN} dan \textit{RNN}, telah menunjukkan kinerja yang luar biasa saat menangani data spasial dan temporal multi-dimensi yang kompleks. Akurasi model-model tersebut masih menjadi area yang perlu ditingkatkan. Metodologi yang sederhana ini dapat mengabaikan keterkaitan yang rumit di antara parameter pengamatan atau fisika dasar yang memicu terjadinya petir \cite{wang2023}.
+Algoritma ML tradisional mencakup \textit{decision trees} (DT), \textit{support vector machines} (SVM), \textit{random forests} (RF), \textit{naive Bayes}, dan \textit{simple ANNs}. Metode-metode ini sangat bergantung pada ekstraksi fitur manual, dengan konstruksi fitur secara manual menjadi komponen penting saat menerapkan algoritma \textit{machine learning} tradisional ini dalam prediksi petir \cite{wang2023}.
+Terbukti, metode DL, khususnya \textit{Convolutional Neural Network} (CNN) dan \textit{Recurrent Neural Network} (RNN), telah menunjukkan kinerja yang luar biasa saat menangani data spasial dan temporal multi-dimensi yang kompleks. Akurasi model-model tersebut masih menjadi area yang perlu ditingkatkan. Metodologi yang sederhana ini dapat mengabaikan keterkaitan yang rumit di antara parameter pengamatan atau fisika dasar yang memicu terjadinya petir \cite{wang2023}.
+Di sisi lain, kemajuan teknologi komputasi telah membuka peluang bagi penerapan algoritma kuantum, seperti yang ditunjukkan dalam penelitian mengenai prediksi kerapatan petir menggunakan \textit{Quantum Support Vector Regression} (QSVR) \cite{fadhil2025}. Pendekatan ini menawarkan paradigma baru untuk mengatasi kompleksitas data nonlinear yang mungkin sulit dijangkau oleh metode komputasi klasik.
 
 Perkembangan terkini di bidang-bidang yang berdekatan (\textit{adjacent fields}) telah menunjukkan keberhasilan penerapan komputasi kuantum dalam memecahkan permasalahan yang kompleks.
 Keunggulan dari model kuantum berasal dari sifat-sifat kuantum seperti \textit{superposition} dan \textit{entanglement}, yang memungkinkan kapasitas pemrosesan yang lebih besar dan identifikasi pola-pola kompleks yang mungkin tidak akan terdeteksi oleh model komputasi klasik \cite{silva2025}.
@@ -34,15 +35,15 @@ Keberhasilan teknologi komputasi kuantum dalam bidang-bidang seperti optimasi da
 Dalam penelitian meteorologi, komputasi kuantum telah mulai digunakan untuk mengembangkan algoritma dan model prediksi cuaca yang lebih efektif. Penelitian juga menunjukkan bahwa komputasi kuantum dapat membantu mempercepat simulasi iklim dan cuaca yang lebih kompleks, dengan meningkatkan kecepatan analisis data atmosfer yang besar dan meningkatkan pemrosesan data yang lebih efisien \cite{rith2025}.
 Komputasi kuantum dengan studi-studi yang ada saat ini berfokus pada prediksi kecepatan angin, iradiansi matahari, pembangkitan daya angin dan fotovoltaik, badai geomagnetik, evapotranspirasi, dan presipitasi \cite{silva2025}.
 
-Petir sebagai fenomena alam kuat menyebabkan kerusakan masif dan risiko keselamatan. Hal ini menjadi isu kritis di Indonesia yang memiliki densitas petir tinggi dan tantangan geografis yang unik. Untuk memitigasi risiko ini, memprediksi parameter petir secara akurat sangatlah penting. Namun, penelitian saat ini masih bergantung pada \textit{artificial intelligence} (AI) standar. Meskipun komputasi kuantum sudah menangani parameter cuaca, terdapat kekosongan penelitian (\textit{gap}) di mana kuantum belum diterapkan secara spesifik untuk prediksi petir.
+Petir sebagai fenomena alam kuat menyebabkan kerusakan masif dan risiko keselamatan. Hal ini menjadi isu kritis di Indonesia yang memiliki densitas petir tinggi dan tantangan geografis yang unik. Untuk memitigasi risiko ini, memprediksi parameter petir secara akurat sangatlah penting. Namun, penelitian saat ini masih bergantung pada \textit{artificial intelligence} (AI) standar. Meskipun komputasi kuantum sudah menangani parameter cuaca, terdapat keterbatasan penelitian (\textit{gap}) di mana kuantum belum diterapkan secara spesifik untuk prediksi petir.
 
 % --- Rumusan Masalah ---
 \section{Rumusan Masalah}
 Berdasarkan uraian di atas mengenai tantangan prediksi cuaca ekstrem dan evolusi teknologi komputasi, maka rumusan masalah yang diajukan dalam penelitian ini adalah:
 \begin{enumerate}
-\item	Bagaimana merancang arsitektur \textit{Variational Quantum Circuit} (VQC) atau \textit{Quantum Neural Network} (QNN) pada framework Qiskit yang optimal untuk mengolah parameter input petir guna memprediksi nilai \textit{Ground Flash Density} (GFD)?
-\item	Bagaimana karakteristik dan akurasi model kuantum tersebut dalam membedakan pola GFD pada wilayah Tropis dibandingkan dengan wilayah Subtropis , serta apakah model mampu melakukan generalisasi pada kedua domain data tersebut?
-\item   Bagaimana memformulasikan pemetaan matematis (mapping) dari parameter yang telah terlatih menjadi suatu fungsi prediksi yang dapat menerima input variabel atmosfer untuk menghasilkan nilai estimasi GFD?
+\item	Bagaimana merancang arsitektur komputasi kuantum pada framework Qiskit yang optimal untuk mengolah parameter input petir guna memprediksi nilai GFD?
+\item	Bagaimana karakteristik dan akurasi model kuantum tersebut dalam membedakan pola GFD pada wilayah Tropis dibandingkan dengan wilayah Subtropis, serta apakah model mampu melakukan generalisasi pada kedua domain data tersebut?
+\item   Bagaimana memformulasikan pemetaan matematis (\textit{mapping}) dari parameter yang telah terlatih menjadi suatu fungsi prediksi yang dapat menerima input variabel atmosfer untuk menghasilkan nilai estimasi GFD?
 \end{enumerate}
 
 % --- Tujuan ---
@@ -56,24 +57,46 @@ Berdasarkan perumusan masalah dan latar belakang, maka tujuan yang diajukan dala
 
 % --- Batasan Masalah ---
 \section{Batasan Masalah}
-Tuliskan batasan-batasan yang diambil dalam pelaksanaan tugas akhir. Batasan ini dapat dihindari (bersifat opsional, tidak perlu ada) jika topik atau judul tugas akhir dibuat cukup spesifik.
+Batasan masalah dari tugas ini adalah:
 \begin{enumerate}
 \item	Pembangunan solusi dengan memanfaatkan Qiskit sebagai \textit{stack} untuk komputasi kuantum dan riset algoritma yang disimulasikan pada komputer pribadi.
-\item   Data yang digunakan pada pelaksanaan tugas akhir diperoleh dari ....
+\item   Data yang digunakan diperoleh dari data historis \textit{lightning detection system} (LDS) PLN Pusltibang dan NASA MERLIN. 
 \end{enumerate}
 
 % --- Metodologi Pengerjaan TA ---
 \section{Metodologi}
-Tuliskan semua tahapan yang akan dilalui selama pelaksanaan tugas akhir. Tahapan ini spesifik untuk menyelesaikan persoalan tugas akhir. Khusus untuk penyusunan proposal ini, jelaskan secara detail:
 
-Menerapkan protokol PRISMA dan Concept Matrix (Webster & Watson) untuk studi literatur
+Metodologi penelitian ini dirancang secara sistematis untuk memastikan tujuan penelitian tercapai dan menjawab rumusan masalah yang telah ditetapkan. Alur penelitian dibagi menjadi dua segmen utama, yaitu tinjauan literatur sistematis untuk membangun landasan teori dan kerangka kerja pengembangan model menggunakan standar industri.
 
-CRISP-DM untuk pengembangan model
+\subsection{Studi Literatur Sistematis}
+Tahap awal penelitian difokuskan pada pemahaman mendalam mengenai \textit{state-of-the-art} dari topik. Proses ini dilakukan dengan ketat untuk menghindari bias dan memastikan relevansi referensi yang digunakan.
+
+\subsubsection{Protokol PRISMA}
+Untuk proses pencarian dan seleksi literatur, penelitian ini menerapkan protokol PRISMA (\textit{Preferred Reporting Items for Systematic Reviews and Meta-Analyses}). Protokol ini terdiri dari empat tahapan utama:
 \begin{enumerate}
-\item	Business Understanding
-\item	Data Understanding
-\item   Data Preperation
-\item   Modeling
-\item   Evaluation
-\item   Deployment
+    \item Melakukan identifikasi (\textit{Identification}) dengan pencarian kata kunci pada basis data akademik.
+    \item Melakukan penyaringan (\textit{Screening}) dengan memeriksa judul dan abstrak dari artikel yang ditemukan untuk meneliminasi duplikasi dan artikel yang tidak relevan dengan konteks.
+    \item Menentukan kelayakan (\textit{Eligibility}) dengan membaca teks lengkap (\textit{full-text}) dari artikel yang lolos tahap penyaringan. Artikel dinilai berdasarkan kriteria inklusi (misalkan dipublikasikan 5 tahun terakhir dan metode terkait) dan kriteria eksklusi.
+    \item Memastikan inklusi (\textit{Included}) dengan menetapkan daftar akhir artikel yang akan dianalisis secara mendalam sebagai referensi utama penelitian.
+\end{enumerate}
+
+\subsubsection{Concept Matrix (Webster \& Watson)}
+Setelah literatur terpilih, analisis dilakukan menggunakan pendekatan \textit{Concept Matrix} yang diusulkan oleh \textcite{webster2002}. Pendekatan ini mengubah pola tinjauan dari \textit{author-centric} menjadi \textit{concept-centric}. Analisis dimulai dengan mengelompokkan literatur berdasarkan konsep, variabel, atau metode yang digunakan, bukan sekadar meringkas per penulis. Kemudian matriks ini digunakan untuk memvisualisasikan area yang sudah banyak diteliti dan area yang belum terjamah, sehingga memvalidasi kebaruan (\textit{novelty}) dari penelitian ini.
+
+\subsection{Pengembangan Model (CRISP-DM)}
+Metodologi pengembangan model dalam penelitian ini mengacu pada standar \textit{Cross-Industry Standard Process for Data Mining} (CRISP-DM). Kerangka kerja ini terdiri dari enam tahapan siklus sebagai berikut:
+
+\begin{enumerate}
+\item \tetit{Business Understanding} (Pemahaman Bisnis)\\
+Tahap pertama adalah memahami apa yang ingin dicapai oleh perusahaan. Fokusnya adalah menentukan tujuan bisnis, mendefinisikan kriteria kesuksesan, dan merancang rencana awal proyek \texit{data mining}.
+\item \textit{Data Understanding} (Pemahaman Data)\\
+Tahap mengumpulkan data awal, mempelajarinya untuk mendapatkan wawasan dasar, serta mengecek kualitas data (apakah ada data yang kotor/hilang) untuk memastikan data tersebut relevan dengan tujuan bisnis.
+Data Preparation (Persiapan Data)\\
+Seringkali menjadi tahap yang paling memakan waktu. Ini adalah proses membersihkan data (cleaning), memilih fitur yang relevan, menggabungkan data, dan memformat ulang data mentah agar siap diproses oleh algoritma pemodelan.
+\item \textit{Modeling} (Pemodelan)\\
+Tahap di mana teknik data mining atau algoritma ML diterapkan pada data yang sudah siap. Parameter model diatur dan dioptimalkan (\texit{tuning}) untuk mendapatkan hasil terbaik.
+\item \textit{Evaluation} (Evaluasi)\\
+Mengevaluasi model yang telah dibuat, bukan hanya dari sisi akurasi matematis, tetapi apakah model tersebut benar-benar menjawab masalah bisnis yang didefinisikan di tahap pertama. Jika belum sesuai, proses bisa kembali ke tahap awal.
+\item \textit{Deployment} (Penyebaran/Implementasi)\\
+Tahap akhir di mana model diterapkan ke dalam operasional bisnis sehari-hari agar pengguna akhir bisa memanfaatkannya, atau sekadar pembuatan laporan akhir dari pengetahuan yang didapat.
 \end{enumerate}

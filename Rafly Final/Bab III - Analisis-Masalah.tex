@@ -8,171 +8,70 @@
 \label{chap:analisis-masalah}
 \section{Analisis Kondisi Saat Ini}
 
-Prediksi GFD dan parameter petir saat ini didominasi model numerik dan ML klasik
-
-NWP dan parameterisasi petir berbasis rumus fisik masih terbatas dalam menangkap proses multi-skala dan sifat chaotic atmosfer.
-Algoritma klasik (DT, RF, SVM, ANN) sangat bergantung pada feature engineering manual dan sering kesulitan memodelkan interaksi non-linear antar variabel meteorologis.
-
-Pendekatan deep learning (CNN/LSTM/ConvLSTM) sudah digunakan untuk nowcasting petir
-
-Arsitektur kompleks (misalnya encoder–decoder 3D CNN, ConvLSTM) dapat memproses data satelit/radar multi-dimensi tetapi memiliki puluhan juta parameter yang mahal secara komputasi.
-Biaya pelatihan dan inferensi tinggi membatasi penerapan operasional, terutama jika ingin melakukan eksperimen multi-skenario atau studi generalisasi lintas wilayah.
-
-Keterbatasan generalisasi model klasik dan deep learning
-
-Atmosfer bersifat dinamis dan chaotic; perubahan kecil pada kondisi awal dapat memicu perbedaan besar pada output, sehingga akurasi model klasik mudah turun di luar domain data latih.
-Peristiwa ekstrem seperti GFD tinggi relatif jarang, sehingga model cenderung bias ke kondisi normal dan kurang akurat untuk ekor distribusi (tail events).
-
-Konteks Indonesia/tropis vs subtropis belum terakomodasi dengan baik
-
-Indonesia memiliki awan CB yang lebih lebar, long tail wave pada arus petir, dan densitas sambaran ke tanah yang lebih tinggi dibanding wilayah subtropis.
-Standar proteksi petir (IEC, NFPA, dll.) banyak dibangun dari data subtropis/lintang menengah, sehingga berpotensi tidak sepenuhnya sesuai jika langsung diterapkan pada iklim tropis maritim Indonesia.
-
-Keterpisahan sumber data global dan lokal
-
-Data satelit global (LIS/OTD) memberikan climatology GFD resolusi global, sedangkan data lokal (mis. PLN) merekam sambaran aktual di jaringan tenaga listrik.
-Integrasi dan pemodelan bersama kedua sumber (tropis vs subtropis) untuk menghasilkan model GFD adaptif secara regional masih minim.
-
-Posisi terkini komputasi kuantum dan QML
-
-QML telah dicoba untuk prediksi suhu permukaan, kecepatan angin, iradiasi matahari, dan GHI dengan hasil yang kompetitif, namun belum ada studi spesifik untuk GFD petir.
-Perangkat masih berada di era NISQ, sehingga banyak penelitian bergantung pada simulator dan perangkat IBM Quantum ukuran kecil dengan sirkuit dangkal.
+Prediksi GFD dan parameter petir saat ini masih didominasi oleh model numerik dan algoritma ML klasik yang memiliki keterbatasan dalam menangkap proses fisik atmosfer yang kompleks serta sangat bergantung pada \textit{feature engineering} manual. Walaupun pendekatan DL seperti CNN dan LSTM telah digunakan untuk \textit{nowcasting}, model-model ini menuntut biaya komputasi yang tinggi dengan jutaan parameter dan kerap mengalami kesulitan generalisasi pada kejadian ekstrem akibat sifat atmosfer yang \textit{chaotic}. Tantangan lainnya adalah ketidaksesuaian standar proteksi internasional yang berbasis data subtropis bila diterapkan di Indonesia, mengingat wilayah tropis memiliki karakteristik awan CB dan parameter petir yang lebih intensif. Di sisi lain, potensi komputasi kuantum atau QML sejauh ini baru diuji pada variabel cuaca umum seperti suhu dan angin, namun belum dimanfaatkan secara spesifik untuk memodelkan GFD maupun mengintegrasikan data global dan lokal guna mengatasi disparitas iklim tersebut di era NISQ ini.
 
 \section{Analisis Kebutuhan}
-\dots
 
 \subsection{Identifikasi Masalah Pengguna}
-Insinyur proteksi petir dan perencana sistem tenaga (mis. PLN)
 
-Membutuhkan estimasi GFD yang reliabel per lokasi untuk menghitung risiko dan merancang sistem proteksi (tower, gardu, jaringan transmisi/distribusi) secara ekonomis namun aman.
-Menghadapi ketidakpastian karena peta GFD berbasis subtropis mungkin tidak cocok dengan karakteristik petir tropis Indonesia.
+Metode komputasi klasik saat ini memiliki keterbatasan dalam menangani sistem atmosfer yang \textit{chaotic} dan memakan biaya komputasi tinggi akibat kompleksitas parameter fisik yang terlibat. Meskipun teknologi komputasi kuantum telah menunjukkan potensi besar dalam menangani pola nonlinear pada parameter cuaca umum seperti kecepatan angin, penerapannya belum pernah dilakukan secara spesifik untuk memprediksi GFD. Kesenjangan ini menghambat pemanfaatan keunggulan \textit{superposition} dan \textit{entanglement} untuk menyelesaikan masalah prediksi petir yang sulit dijangkau metode konvensional.
 
-Peneliti meteorologi dan klimatologi petir
+Kendala utama bagi pengguna adalah ketiadaan formulasi pemetaan matematis (\textit{mapping}) yang tervalidasi, yang memungkinkan input variabel atmosfer dikonversi langsung menjadi nilai estimasi GFD. Pendekatan saat ini masih sangat bergantung pada ekstraksi fitur manual yang rumit dan sering kali mengabaikan keterkaitan fisika dasar pemicu petir. Hal ini menciptakan kebutuhan mendesak akan suatu fungsi prediktor komputasi yang praktis, dengan parameter cuaca dapat dimasukkan ke dalam sirkuit teroptimasi untuk menghasilkan luaran nilai GFD yang akurat.
 
-Memerlukan model yang mampu mengeksplorasi hubungan non-linear antara variabel meteorologis (CAPE, presipitasi, kelembapan, dll.) dengan GFD, termasuk perbedaan tropis vs subtropis.
-Kesulitan mengevaluasi apakah model yang terlatih di suatu rezim iklim dapat digeneralisasi ke rezim lain tanpa kehilangan akurasi secara drastis.
-
-Penyusun standar dan regulator
-
-Perlu evidensi ilmiah berbasis data untuk meninjau kecocokan standar proteksi petir yang bersumber dari data subtropis ketika diterapkan di Indonesia dan wilayah tropis lainnya.
-Memerlukan indikator kuantitatif yang menunjukkan gap antara GFD “standar” vs GFD aktual tropis.
-
-Komunitas QML dan komputasi kuantum terapan
-
-Membutuhkan studi kasus konkret di domein meteorologi tropis untuk mengevaluasi benefit praktis QNN/VQC dibanding model klasik.
-Menghadapi keterbatasan contoh implementasi end-to-end yang menghubungkan data cuaca/petir dunia nyata dengan arsitektur QNN di Qiskit.
-
-Masalah praktis lintas pemangku kepentingan
-
-Ketidakakuratan GFD mengarah pada desain proteksi over-designed (mahal) atau under-designed (tidak aman).
-Keterbatasan model yang tidak generalizable menyulitkan transfer pengetahuan dari wilayah subtropis ke tropis dan sebaliknya.
+Akurasi prediksi semakin sulit dicapai akibat disparitas karakteristik yang signifikan antara petir tropis dan subtropis. Standar proteksi dan model prediksi yang tersedia saat ini umumnya dikembangkan berbasis data subtropis, sehingga menimbulkan bias dan ketidaksesuaian ketika diterapkan di wilayah tropis. Kondisi ini menyulitkan pengguna dalam menghitung GFD yang reliabel karena belum adanya model yang terbukti mampu melakukan generalisasi pada kedua domain iklim yang berbeda tersebut.
 
 \subsection{Kebutuhan Fungsional}
-Model prediksi GFD kontinu berbasis QNN/VQC
 
-Menerima input berupa fitur meteorologis dan/atau klimatologis yang relevan (mis. CAPE, presipitasi, suhu permukaan, kelembapan, variabel geopotensial, dsb.).
-Menghasilkan output berupa estimasi nilai GFD (mis. sambaran per km² per tahun) untuk suatu grid/wilayah.
+Berdasarkan identifikasi masalah pengguna, kebutuhan fungsional model ditunjukkan pada Tabel \ref{tbl:tabelFungsional}.
 
-Kemampuan membedakan dan memodelkan pola tropis vs subtropis
-
-Mengakomodasi penandaan domain (tropis/subtropis) atau koordinat geografis sebagai bagian dari fitur.
-Mampu mempelajari perbedaan pola GFD pada kedua rezim iklim dan memvisualisasikannya melalui analisis error dan distribusi prediksi.
-
-Dukungan eksperimen generalisasi lintas domain
-
-Memungkinkan skenario train-on-tropics, test-on-subtropics dan sebaliknya untuk mengukur kemampuan adaptasi model.
-Menyediakan pipeline untuk membandingkan performa cross-domain vs in-domain menggunakan metrik yang sama.
-
-Integrasi dengan baseline klasik
-
-Menyertakan implementasi model klasik (mis. RF, SVR, MLP sederhana, atau DL ringan) pada dataset yang sama sebagai pembanding kinerja.
-Menyediakan fungsi evaluasi bersama (common evaluation interface) antara QNN dan baseline klasik.
-
-Manajemen eksperimen dan konfigurasi
-
-Menyimpan konfigurasi feature map, ansatz, optimizer, dan hyperparameter lain dalam bentuk yang dapat direplikasi.
-Menyediakan fungsi untuk menyimpan dan memanggil kembali model/predictor yang telah terlatih untuk keperluan analisis dan validasi lanjutan.
+\input table/tabelFungsional.tex
 
 \subsection{Kebutuhan Nonfungsional}
-Keterbatasan komputasi dan hardware
 
-Implementasi utama menggunakan simulator Qiskit pada komputer pribadi, sehingga jumlah qubit dan kedalaman sirkuit harus dibatasi.
-Waktu pelatihan dan inferensi harus tetap dalam rentang yang wajar untuk ukuran dataset yang tersedia, sehingga arsitektur QNN perlu efisien.
+Berdasarkan identifikasi masalah pengguna, kebutuhan nonfungsional model ditunjukkan pada Tabel \ref{tbl:tabelNonFungsional}.
 
-Kualitas dan kelengkapan dataset
-
-Data PLN dan NASA/LIS-OTD mungkin memiliki cakupan temporal/spasial yang berbeda, missing values, dan ketidakseimbangan distribusi GFD.
-Diperlukan prosedur preprocessing dan pembersihan data yang jelas untuk mengurangi bias dan noise.
-
-Interpretabilitas dan transparansi minimal
-
-Walaupun QNN bersifat black-box, hasil perlu dilengkapi dengan analisis metrik (MSE, RMSE, MAE, R²) dan visualisasi sederhana (mis. plot aktual vs prediksi, sebar error).
-Dokumentasi pemilihan fitur dan justifikasi desain arsitektur (feature map, ansatz) harus jelas.
-
-Reproducibility dan maintainability
-
-Kode, konfigurasi eksperimen, dan versi pustaka (Python, Qiskit) perlu dicatat untuk mendukung replikasi hasil di masa depan.
-Struktur proyek (notebook, modul Python) harus rapi untuk memudahkan pengembangan lanjutan oleh peneliti lain.
-
-Kesesuaian dengan batasan era NISQ
-
-Arsitektur QNN harus mempertimbangkan noise dan batas kedalaman sirkuit jika kelak dijalankan di perangkat IBM Quantum nyata.
-Desain perlu kompatibel dengan teknik error mitigation sederhana yang tersedia di Qiskit.
+\input table/tabelNonFungsional.tex
 
 \section{Analisis Pemilihan Solusi}
+
 \subsection{Alternatif Solusi}
-Pendekatan ML klasik murni
 
-Menggunakan RF, SVR, gradient boosting, atau MLP untuk memprediksi GFD dari fitur meteorologis.
-Kelebihan: tooling matang, implementasi sederhana, kebutuhan komputasi diketahui.
+Alternatif dari pemilihan solusi dibagi menjadi pendekatan-pendekatan algoritma QML yang telah dibahas pada studi literatur.
 
-Pendekatan deep learning spatiotemporal
-
-Mengadopsi CNN, LSTM, atau ConvLSTM yang telah digunakan di penelitian nowcasting petir dan cuaca.
-Kelebihan: mampu menangkap pola spasial-temporal kompleks, tetapi memerlukan data besar dan komputasi berat.
-
-Hybrid klasik dengan feature engineering intensif
-
-Menggabungkan transformasi fitur (mis. PCA, statistik klimatologis) dengan model klasik (RF/SVR).
-Mengandalkan kreativitas feature design untuk menangkap non-linearitas dan perbedaan tropis vs subtropis.
-
-QML berbasis QSVR (quantum kernel method)
-
-Menggunakan QSVR dengan quantum feature map untuk membangun kernel non-linear di ruang Hilbert.
-Potensial unggul dalam time-series forecasting, namun training membutuhkan komputasi matriks Gram M×M yang mahal untuk M sampel besar.
-
-QML berbasis QNN/VQC
-
-Menggunakan arsitektur VQC dengan EstimatorQNN sebagai regressor GFD.
-Memanfaatkan hybrid loop klasik-kuantum untuk melatih parameter ansatz secara iteratif.
+\begin{enumerate}
+\item	\textit{Quantum Generative Adversarial Networks} (QGAN)
+\item   \textit{Quantum Neural Network} (QNN)
+\item   \textit{Quantum Support Vector Regression} (QSVR)
+\item   \textit{Quantum $K$ Nearest Neighbors} (QkNN)
+\item   \textit{Quantum Decision Tree} (QDT)
+\end{enumerate}
 
 \subsection{Analisis Penentuan Solusi}
-Kesesuaian dengan tujuan penelitian
 
-Tujuan utama adalah mengeksplorasi potensi QML, khususnya QNN/VQC di Qiskit, untuk prediksi GFD tropis dan subtropis, bukan sekadar memaksimalkan akurasi dengan model klasik.
-QNN menyediakan kerangka yang lebih kaya untuk mengkaji expressibility dan effective dimension dibanding QSVR semata.
+Penentuan solusi dilakukan berdasarkan parameter penilaian berikut.
 
-Pertimbangan kompleksitas komputasi
+\begin{enumerate}
+\item	\textit{Suitability for Regression} (GFD): Seberapa alami algoritma tersebut beradaptasi untuk memprediksi nilai numerik kontinu (densitas)? Beberapa algoritma pada dasarnya adalah \textit{classifiers} (pengklasifikasi) dan memerlukan modifikasi yang kompleks untuk dapat menghasilkan nilai \textit{density}.
+\item   \textit{Handling High-Dimensional Data} (Fitur Meteorologi): Data meteorologi (Suhu, Kelembapan, Tekanan, CAPE, \textit{Shear}) bisa menjadi sangat kompleks. Seberapa efisien algoritma tersebut dapat memetakan fitur klasik ini ke dalam \textit{Hilbert space} kuantum (efisiensi \textit{Feature Map})?
+\item   \textit{Noise Resilience} (Era \textit{NISQ}): Komputer kuantum saat ini memiliki tingkat \textit{noise} yang tinggi. Seberapa baik kinerja algoritma tanpa adanya \textit{error correction} yang sempurna? (Metode \textit{Kernel} sering kali menoleransi \textit{noise} lebih baik daripada \textit{deep circuits}).
+\item   \textit{Training Stability & Convergence}: Seberapa mudah algoritma tersebut untuk dilatih? (misalnya, kemampuan menghindari \textit{Barren Plateaus} pada QNN atau \textit{mode collapse} pada QGAN).
+\item   \textit{Qiskit Implementation Maturity}: Seberapa siap dan tersedia \textit{library} serta \textit{primitives} dalam ekosistem Qiskit saat ini (khususnya \textit{Qiskit Machine Learning})?
+\end{enumerate}
 
-QSVR berbasis kernel memerlukan perhitungan Gram matrix berukuran M×M yang berskala minimal O(M²–M³), sehingga kurang efisien untuk jumlah sampel latih menengah.
-Training QNN/VQC dengan optimizer berbasis gradient atau heuristic cenderung menskala linier terhadap jumlah sampel, lebih sesuai untuk eksperimen pada dataset GFD ukuran menengah.
+Masing-masing parameter dibobotkan pada Tabel \ref{tbl:tabelKriteriaSolusi}. Penentuan bobot kriteria ini didasarkan pada prioritas utama penelitian, yaitu kemampuan model dalam mengolah kompleksitas data meteorologi. Kriteria \textit{Handling Complex Meteo Features} diberikan bobot dominan sebesar 50\%, karena fenomena petir (GFD) melibatkan interaksi variabel cuaca yang sangat nonlinear dan berdimensi tinggi, sehingga kemampuan \textit{Feature Map} dalam merepresentasikan data tersebut menjadi faktor penentu utama akurasi. Sementara itu, aspek \textit{Noise Resilience} dan \textit{Training Stability} diberikan bobot yang lebih rendah (total 15\%) karena penelitian ini difokuskan pada validasi algoritma menggunakan simulasi (\textit{quantum simulator}) yang ideal, sehingga kendala \textit{noise} perangkat keras (\textit{NISQ}) dapat diminimalisir dan bukan menjadi hambatan utama dalam tahap eksperimen ini.
 
-Kesesuaian dengan era NISQ dan ekosistem Qiskit
+Masing-masing algoritma dinilai dengan skala penilaian berikut.
+\begin{enumerate}
+\item	4 - Sangat Baik / Sangat Sesuai (\textit{Excellent}):\\
+Algoritma memiliki kemampuan superior dalam memenuhi kriteria, dukungan \textit{library} yang matang, atau karakteristik yang sangat tepat untuk menyelesaikan masalah regresi GFD tanpa modifikasi besar.
+\item   3 - Baik / Sesuai (\textit{Good}):\\
+Algoritma mampu memenuhi kriteria dengan baik dan dapat diandalkan, namun masih memiliki sedikit keterbatasan teknis atau kinerja dibandingkan dengan skor 4.
+\item   2 - Cukup / Kurang Sesuai (\textit{Fair}):\\
+Algoritma dapat digunakan namun memerlukan modifikasi signifikan, upaya komputasi yang besar, atau secara teoritis kurang optimal untuk karakteristik data meteorologi.
+\item   1 - Kurang / Tidak Sesuai (\textit{Poor}):\\
+Algoritma memiliki keterbatasan fundamental untuk kriteria tersebut, sangat sulit diimplementasikan, atau tidak dirancang untuk tujuan prediksi nilai kontinu (regresi).
+\end{enumerate}
 
-VQC dirancang untuk perangkat NISQ dengan kedalaman sirkuit yang dapat dikontrol, serta mudah dioptimasi dengan classical optimizer.
-Qiskit menyediakan primitive Estimator, library feature map (mis. ZZFeatureMap), dan ansatz (TwoLocal, Ry, dsb.) yang langsung dapat dimanfaatkan.
+\input table/tabelKriteriaSolusi.tex
 
-Fleksibilitas arsitektur dan desain eksperimen
-
-QNN memungkinkan eksplorasi berbagai kombinasi feature map–ansatz dan kedalaman sirkuit untuk menyesuaikan dengan kompleksitas data dan keterbatasan komputasi.
-Arsitektur yang sama dapat diadaptasi untuk studi generalisasi tropis vs subtropis dengan mengganti skema input atau konfigurasi training.
-
-Nilai tambah ilmiah dibanding baseline klasik
-
-Dengan tetap menyertakan baseline klasik, pemilihan QNN/VQC memberikan kontribusi ilmiah berupa perbandingan sistematis antara dua paradigma komputasi pada kasus GFD.
-Hasil eksperimen dapat menjadi acuan awal bagi pengembangan standar dan aplikasi QML lebih lanjut di bidang meteorologi tropis.
-
-Peluang implementasi di hardware kuantum nyata
-
-Desain VQC yang dangkal dan hemat qubit membuka peluang untuk uji coba di perangkat IBM Quantum ketika sumber daya tersedia.
-Hal ini memberikan nilai demonstrasi praktis yang tidak dapat diperoleh jika hanya mengandalkan model klasik.
+Berdasarkan penilaian pada Tabel \ref{tbl:tabelKriteriaSolusi}, QNN ditetapkan sebagai metode utama yang akan digunakan. QNN mendapatkan skor sempurna (4) pada kemampuan menangani fitur kompleks. Arsitektur VQC pada QNN memungkinkan parameter dalam \textit{feature map} untuk ikut dilatih (\textit{trainable}), sehingga model dapat belajar representasi data cuaca yang paling optimal secara adaptif. Meskipun QNN memiliki kelemahan pada stabilitas pelatihan akibat fenomena \textit{Barren Plateaus} (Skor 2), dampak negatif ini diredam oleh bobot kriteria stabilitas yang kecil (5\%). Dukungan pustaka Qiskit yang matang (Skor 4) juga memastikan implementasi QNN dapat dilakukan secara efisien.
